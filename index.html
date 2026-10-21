@@ -87,7 +87,7 @@ nav .links button.on{background:var(--ac);color:#fff}
 <script type="module">
 /* ============ الترجمة ============ */
 const R=`home|المترجم الذكي|Smart Translator
-dict|قاموس الإشارات|Sign dictionary
+dict|قاموس لغة الإشارة (الإدارة)|Sign Language Dictionary (Admin)
 reports|متابعة البلاغات|Track Reports
 admin|لوحة المسؤول|Admin Portal
 account|حسابي|My Account
@@ -95,7 +95,7 @@ login|تسجيل الدخول|Sign in
 register|إنشاء حساب|Create account
 logout|خروج|Sign out
 name|الاسم الكامل|Full name
-email|البريد الإلكتروني|Email
+email|البريد الإلكتروني (للتواصل فقط)|Email (contact only)
 password|كلمة المرور (8 أحرف على الأقل)|Password (min 8 chars)
 dob|تاريخ الميلاد|Date of birth
 gender|الجنس|Gender
@@ -131,7 +131,7 @@ loadingModel|جارٍ تحميل نموذج اليد…|Loading hand model…
 camerr|تعذر فتح الكاميرا (يلزم HTTPS أو localhost وإذن الكاميرا).|Camera unavailable (needs HTTPS/localhost and permission).
 modelerr|تعذر تحميل نموذج اليد (تحقق من الاتصال).|Could not load hand model (check connection).
 unclear|لم يتم التعرف على الإشارة بوضوح، حاول مرة أخرى.|Sign not recognised clearly, please try again.
-nosamples|لا توجد إشارات مدرّبة بعد. سجّل إشاراتك من «قاموس الإشارات».|No trained signs yet. Record signs from the dictionary.
+nosamples|لم تُضف الإدارة إشارات معتمدة بعد؛ يمكنك كتابة النص يدويًا مؤقتًا.|The administrator has not added approved signs yet. You can type your text manually for now.
 pick|هل تقصد إحدى هذه؟|Did you mean one of these?
 trained|إشارات مدرّبة|Trained signs
 honest|هذه النسخة تتعرف فقط على الإشارات التي سجّلتها أنت (أو نموذج مدرّب تربطه). ولا تخمّن أبدًا: عند الشك تعرض خيارات أو رسالة عدم وضوح.|This build only recognises signs you recorded (or a trained model you plug in). It never guesses: when unsure it offers options or says it is unclear.
@@ -152,7 +152,7 @@ recHint|سجّل 3 عينات على الأقل (بيد واحدة أو يدين
 recFail|لم تُلتقط اليد بوضوح، أعد المحاولة.|Hand not captured clearly, retry.
 recSaved|تم حفظ عينة|Sample saved
 recing|أدِّ الإشارة الآن…|Sign now…
-sendRep|إرسال وتوثيق بالبريد|Submit and Verify by Email
+sendRep|إرسال البلاغ|Submit report
 kind|نوع التنمر|Type of bullying
 physical|جسدي|Physical
 verbal|لفظي|Verbal
@@ -162,7 +162,7 @@ other|آخر|Other
 org|الجهة|Organization
 details|تفاصيل الحادثة (اختياري)|Incident details (optional)
 evidence|أدلة (صور، اختياري)|Evidence (images, optional)
-reviewNote|راجع النص وعدّله قبل الإرسال. سيتم إرسال البلاغ إلى الجهة المختصة وإشعارك بالبريد عند تفعيل خدمة البريد.|Review and edit before sending. The report goes to the selected organization; email updates require email service configuration.
+reviewNote|راجع النص وعدّله قبل الإرسال. يمكنك متابعة حالة البلاغ والردود من صفحة متابعة البلاغات.|Review and edit before sending. Track your report and replies from the Reports page.
 sent|تم إرسال البلاغ. رقمه:|Report sent. Number:
 none|لا توجد بلاغات.|No reports.
 back|رجوع|Back
@@ -181,10 +181,10 @@ fromUser|المستخدم|User
 fromOrg|الجهة|Organization
 school|المدرسة / الجهة التعليمية|School / Educational institution
 grade|الصف الدراسي / الفصل|Grade / Class
-profileTitle|توثيق الحساب والبريد الإلكتروني|Account and Email Verification
-profileDesc|لضمان وصول تحديثات البلاغات إلى بريدك المسجل.|Receive report updates at your registered email address.
+profileTitle|معلومات الحساب|Account information
+profileDesc|البريد الإلكتروني معلومة للتواصل فقط، ولا يُستخدم لإرسال رموز تحقق.|Email is contact information only; no verification codes are sent.
 profileNotice|إشعار التوثيق عبر البريد|Email verification notice
-profileNoticeDesc|ترسل إشعارات متابعة البلاغات إلى البريد المسجل عند تفعيل خدمة البريد في الخادم.|Report updates are emailed to your registered address when server email is configured.
+profileNoticeDesc|تابع البلاغات والردود من داخل المنصة.|Track reports and replies inside the platform.
 reportTitle|إعداد وتأكيد إرسال بلاغ ضد التنمر|Prepare and Confirm Anti-Bullying Report
 reportIntro|اختر نوع التنمر والجهة المختصة، ثم راجع النص وأرسل البلاغ.|Select the bullying type and organization, review your text, then submit.
 reportsTitle|سجل ومتابعة البلاغات ضد التنمر|Anti-Bullying Reports Log and Tracking
@@ -221,8 +221,8 @@ const ST={new:["red","لم يتم الاستلام","Not received"],received:["g
 /* ============ الحالة والأدوات ============ */
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const ls=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
-const S={tok:ls("tok",null),me:null,lang:ls("l","ar"),theme:ls("t","dark"),page:"home",auth:"login",pend:null,devCode:"",err:"",
- text:"",words:[],cam:false,run:false,track:true,status:"idle",sigs:[],cand:null,msg:"",rec:null,reports:[],rep:null,edit:false,mailOk:true,customWords:[]};
+const S={tok:ls("tok",null),me:null,lang:ls("l","ar"),theme:ls("t","dark"),page:"home",auth:"login",err:"",
+ text:"",words:[],cam:false,run:false,track:true,status:"idle",sigs:[],cand:null,msg:"",rec:null,reports:[],rep:null,edit:false,customWords:[]};
 const t=k=>L[S.lang][k]??k,L2=a=>S.lang==="ar"?a[1]:a[2];
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const fmt=d=>new Date(d).toLocaleString(S.lang==="ar"?"ar-SA":"en-GB");
@@ -369,13 +369,12 @@ const recMsg=m=>{const e=$("#recm");if(e)e.textContent=m};
 
 /* ============ العرض ============ */
 const nav=()=>{
-  const pages=S.me.role==="org"?["admin","account"]:["home","dict","reports","account"];
+  const pages=S.me.role==="admin"?["admin","dict","account"]:S.me.role==="org"?["admin","account"]:["home","reports","account"];
   const icons={home:"◉",dict:"✋",reports:"⬡",admin:"♙",account:"♙"};
-  return `<nav><div class="brand" data-p="${S.me.role==="org"?"admin":"home"}"><div class="brand-mark"><i>إ</i></div><div><div class="brand-name">إشَارَة</div><div class="brand-tag">${S.lang==="ar"?"ترجمة لغة الإشارة ومناهضة التنمر ذكياً":"AI Sign Translation & Anti-Bullying Platform"}</div></div></div><div class="links">${pages.filter(p=>p!=="account").map(p=>`<button data-p="${p}" class="${S.page===p?"on":""}"><span>${icons[p]}</span>${t(p)}</button>`).join("")}</div><span class="sp"></span><div class="nav-actions"><button id="lg" title="Language">${t("lang")}</button><button id="th" aria-label="${t("theme")}">◐</button><button class="av" data-p="account" title="${t("account")}">${esc([...S.me.name][0])}</button></div></nav>`;
+  return `<nav><div class="brand" data-p="${S.me.role==="org"||S.me.role==="admin"?"admin":"home"}"><div class="brand-mark"><i>إ</i></div><div><div class="brand-name">إشَارَة</div><div class="brand-tag">${S.lang==="ar"?"ترجمة لغة الإشارة ومناهضة التنمر ذكياً":"AI Sign Translation & Anti-Bullying Platform"}</div></div></div><div class="links">${pages.filter(p=>p!=="account").map(p=>`<button data-p="${p}" class="${S.page===p?"on":""}"><span>${icons[p]}</span>${t(p)}</button>`).join("")}</div><span class="sp"></span><div class="nav-actions"><button id="lg" title="Language">${t("lang")}</button><button id="th" aria-label="${t("theme")}">◐</button><button class="av" data-p="account" title="${t("account")}">${esc([...S.me.name][0])}</button></div></nav>`;
 };
 function authView(){
   const m=S.auth;
-  if(m==="verify")return `<div class="center"><form class="form" id="f"><div class="logo" style="justify-content:center"><i>✋</i>إشارة</div><h1>${t("verifyT")}</h1><p class="note" style="text-align:center">${t("verifyD")}</p>${S.devCode?`<p class="note" style="text-align:center">DEV: ${esc(S.devCode)}</p>`:""}<label>${t("code")}<input id="cd" inputmode="numeric" maxlength="6" required autocomplete="one-time-code" style="text-align:center;font-size:1.4rem;letter-spacing:6px"></label><div class="err">${esc(S.err)}</div><button class="pri" style="padding:.8rem">${t("verify")}</button><button type="button" id="rs">${t("resend")}</button></form></div>`;
   const reg=m==="register";
   return `<div class="center"><form class="form" id="f"><div class="logo" style="justify-content:center"><i>✋</i>إشارة</div><h1>${reg?t("register"):t("login")}</h1>
   ${reg?`<label>${t("name")}<input id="nm" required></label>`:""}<label>${t("email")}<input id="em" type="email" required autocomplete="email"></label>
@@ -386,8 +385,8 @@ function authView(){
 }
 function home(){
   const inf=S.rec?`<div class="recbar"><b>${t("recT")} ${esc(S.rec.word)}</b><div class="note">${t("recHint")}</div><div class="row"><button class="pri" id="rg">${t("recGo")}</button><button id="rd">${t("recDone")}</button></div><div id="recm" class="note"></div></div>`:"";
-  return `<div class="hero"><h2>${S.lang==="ar"?"نظام الترجمة الفورية بالذكاء الاصطناعي":"Real-Time AI Sign Language Translation"}</h2><p>${S.lang==="ar"?"قم بتفعيل الكاميرا، واستخدم إشارات اليدين ليظهر النص المترجم. يمكنك مراجعته ثم إرساله كبلاغ.":"Turn on the camera, sign to generate text, review it and submit a report."}</p></div><div class="grid"><section class="panel cam" id="cam">${S.cam?camHTML():`<div class="ov"><button class="pri big" id="open">${t("open")}</button><p>${t("allow")}</p></div>`}</section>
-  <section class="panel tr"><div class="warn">${t("honest")} · ${t("trained")}: ${new Set(S.sigs.map(s=>s.word)).size}</div>${inf}
+  return `<div class="hero"><h2>${S.lang==="ar"?"مترجم لغة الإشارة":"Sign Language Translator"}</h2><p>${S.lang==="ar"?"افتح الكاميرا لالتقاط إشارات اليد ومطابقتها مع الإشارات المعتمدة في المنصة. راجع النص وعدّله قبل تقديم البلاغ.":"Open the camera to match hand signs against the platform’s approved samples. Review and edit the text before reporting."}</p></div><div class="grid"><section class="panel cam" id="cam">${S.cam?camHTML():`<div class="ov"><button class="pri big" id="open">${t("open")}</button><p>${t("allow")}</p></div>`}</section>
+  <section class="panel tr">${inf}
   <h3>${t("tr")}</h3><div id="out" contenteditable="true" data-ph="${t("ph")}">${esc(S.text)}</div><div id="msg" class="err"></div><div id="cand"></div>
   <div class="act"><button id="cl">${t("clear")}</button><button id="cp">${t("copy")}</button><button id="sp">${t("speak")}</button><button id="cm">،</button><button id="pd">.</button><button id="sr" class="pri">${t("mkrep")}</button></div><p class="note">${t("reviewNote")}</p></section></div><div class="stat" id="st"><span class="dot"></span>${t(S.status)}</div>`;
 }
@@ -397,7 +396,7 @@ function dictPage(q=""){
   const known=new Set(SEED.map(d=>d.word)),extra=[...new Map(S.sigs.filter(s=>!known.has(s.word)).map(s=>[s.word,{word:s.word,type:s.type}])).values()];
   const cnt=w=>S.sigs.filter(s=>s.word===w).length,all=[...SEED,...extra].filter(d=>!q||d.word.includes(q));
   const tp={WORD:t("word"),PHRASE:t("phrase"),LETTER:t("letter"),NUMBER:t("number")};
-  return `<h2>${t("dict")}</h2><div class="warn">${t("honest")}</div>
+  return `<h2>${t("dict")}</h2><div class="note">${S.lang==="ar"?"إدارة قاموس لغة الإشارة المعتمد لجميع مستخدمي المنصة. العينات هنا مشتركة ولا يستطيع المستخدمون تعديلها.":"Manage the shared sign language dictionary for all users. Only administrators can edit it."}</div>
   <div class="row" style="max-width:640px;margin-bottom:1rem"><input id="q" placeholder="${t("dictSearch")}" value="${esc(q)}"></div>
   <div class="row" style="max-width:640px;margin-bottom:1.2rem"><input id="nw" placeholder="${t("addWord")}"><select id="nt" style="max-width:130px">${Object.entries(tp).map(([k,v])=>`<option value="${k}">${v}</option>`).join("")}</select><button id="na" style="flex:0">${t("add")}</button></div>
   <div class="list">${all.map(d=>`<div class="item"><b style="font-size:1.3rem">${esc(d.word)}</b><br><span class="tag">${tp[d.type]}</span> <small>${cnt(d.word)} ${t("samples")}</small><div class="row" style="margin-top:.5rem"><button data-r="${esc(d.word)}" data-ty="${d.type}">${t("rec")}</button>${cnt(d.word)?`<button data-x="${esc(d.word)}">${t("delS")}</button>`:""}</div></div>`).join("")}</div>`;
@@ -406,7 +405,7 @@ const stTag=k=>`<span class="st ${ST[k][0]}"><i></i>${L2(ST[k])}</span>`;
 const orgN=k=>L2(ORGS.find(o=>o[0]===k)||[k,k,k]);
 const kindN=ks=>ks.map(k=>t(k)).join("، ");
 function repsPage(){
- const adm=S.me.role==="org";
+ const adm=S.me.role==="org"||S.me.role==="admin";
  const header=`<div class="page-head"><div>${adm?`<span class="tag">${t("admin")}</span>`:""}<h2>${t(adm?"adminTitle":"reportsTitle")}</h2><p>${t(adm?"adminDesc":"reportsDesc")}</p></div>${adm?`<div>${t("reportCount")}: <b class="tag">${S.reports.length}</b></div>`:`<button class="pri" data-p="newrep">+ ${t("newReport")}</button>`}</div>`;
  if(adm)return `<section class="page-panel">${header}<div class="admin-scroll"><table class="admin-table"><thead><tr>${["reportNumber","reporterName","orgGrade","kind","reportBody","reportDate","currentStatus","adminAction"].map(k=>`<th>${t(k)}</th>`).join("")}</tr></thead><tbody>${S.reports.map(r=>`<tr><td><b>#${r.id}</b></td><td>${esc(r.reporter?.name||"—")}</td><td>${orgN(r.org)}${r.reporter?.school?` / ${esc(r.reporter.school)}`:""}${r.reporter?.grade?` / ${esc(r.reporter.grade)}`:""}</td><td>${kindN(r.kind)}</td><td class="excerpt">${esc(r.text.slice(0,140))}</td><td>${fmt(r.created)}</td><td>${stTag(r.status)}</td><td><button class="pri" data-o="${r.id}">${t("edit")} / ${t("setStatus")}</button></td></tr>`).join("")||`<tr><td colspan="8">${t("none")}</td></tr>`}</tbody></table></div></section>`;
  const legend=`<div class="legend"><div class="red"><b>🔴 ${t("redTitle")}</b><small>${t("redDesc")}</small></div><div class="yellow"><b>🟡 ${t("yellowTitle")}</b><small>${t("yellowDesc")}</small></div><div class="green"><b>🟢 ${t("greenTitle")}</b><small>${t("greenDesc")}</small></div></div>`;
@@ -429,21 +428,23 @@ function newRep(){
 }
 function acct(){
  const u=S.me, user=u.role==="user";
- return `<div class="profile-wrap"><section class="page-panel"><div class="page-head profile-top"><div><h2>${t("profileTitle")}</h2><p>${t("profileDesc")}</p></div>${u.verified?`<span class="verified">✓ ${t("verified")}</span>`:""}</div><form id="ef" class="form" style="width:100%;background:transparent;border:0;padding:0"><div class="profile-fields"><label>${t("name")}<input id="nm" value="${esc(u.name)}" required></label><label>${t("email")}<input type="email" value="${esc(u.email)}" disabled></label>${user?`<label>${t("school")}<input id="school" value="${esc(u.school||"")}"></label><label>${t("grade")}<input id="grade" value="${esc(u.grade||"")}"></label><label>${t("dob")}<input id="db" type="date" value="${esc(u.dob||"")}" required></label><label>${t("gender")}<span class="radio"><label><input type="radio" name="g" value="m" ${u.gender!=="f"?"checked":""}>${t("male")}</label><label><input type="radio" name="g" value="f" ${u.gender==="f"?"checked":""}>${t("female")}</label></span></label>`:`<label>${t("org")}<input disabled value="${orgN(u.org)}"></label>`}</div><div class="err" id="ae"></div><div class="row"><button class="pri" type="submit">${t("save")}</button><button type="button" id="lo">${t("logout")}</button></div></form></section></div>`;
+ return `<div class="profile-wrap"><section class="page-panel"><div class="page-head profile-top"><div><h2>${t("profileTitle")}</h2><p>${t("profileDesc")}</p></div></div><form id="ef" class="form" style="width:100%;background:transparent;border:0;padding:0"><div class="profile-fields"><label>${t("name")}<input id="nm" value="${esc(u.name)}" required></label><label>${t("email")}<input id="em" type="email" value="${esc(u.email||"")}" required autocomplete="email"></label>${user?`<label>${t("school")}<input id="school" value="${esc(u.school||"")}"></label><label>${t("grade")}<input id="grade" value="${esc(u.grade||"")}"></label><label>${t("dob")}<input id="db" type="date" value="${esc(u.dob||"")}" required></label><label>${t("gender")}<span class="radio"><label><input type="radio" name="g" value="m" ${u.gender!=="f"?"checked":""}>${t("male")}</label><label><input type="radio" name="g" value="f" ${u.gender==="f"?"checked":""}>${t("female")}</label></span></label>`:`<label>${t("org")}<input disabled value="${orgN(u.org)}"></label>`}</div><div class="err" id="ae"></div><div class="row"><button class="pri" type="submit">${t("save")}</button><button type="button" id="lo">${t("logout")}</button></div></form></section></div>`;
 }
 function view(){
   if(!S.me)return authView();
   if(S.page==="newrep")return nav()+newRep();
   const p=S.page;
-  return nav()+`<main>${p==="home"?home():p==="dict"?dictPage():p==="reports"||p==="admin"?repsPage():p==="rep"&&S.rep?repDetail():acct()}</main>`;
+  return nav()+`<main>${p==="home"?home():p==="dict"&&S.me.role==="admin"?dictPage():p==="reports"||p==="admin"?repsPage():p==="rep"&&S.rep?repDetail():acct()}</main>`;
 }
 async function go(p,id){
+  if(p==="dict"&&S.me?.role!=="admin")return go("home");
+  if(p==="admin"&&!["admin","org"].includes(S.me?.role))return go("home");
   if(p!=="home"&&S.cam)stopCam();
   S.page=p;S.err="";
   try{
     if(p==="reports"||p==="admin")S.reports=(await api("/reports")).reports;
     if(p==="rep")S.rep=(await api("/reports/"+id)).report;
-    if(p==="dict"||p==="home")S.sigs=S.me.role==="org"?[]:(await api("/signs")).signs;
+    if(p==="dict"||p==="home")S.sigs=(await api("/signs")).signs;
   }catch(e){if(!S.me)return}
   render();
 }
@@ -461,25 +462,24 @@ function bind(){
   $$("[data-o]").forEach(b=>b.onclick=()=>go("rep",b.dataset.o));
   const lo=$("#lo");if(lo)lo.onclick=()=>logout();
   if(S.page==="home")bindHome();
-  if(S.page==="dict")bindDict();
+  if(S.page==="dict"&&S.me.role==="admin")bindDict();
   if(S.page==="rep")bindRep();
   if(S.page==="newrep")bindNew();
   if(S.page==="account"){
-    const ef=$("#ef");if(ef)ef.onsubmit=async e=>{e.preventDefault();try{const b={name:$("#nm").value,lang:S.lang};if(S.me.role==="user")Object.assign(b,{dob:$("#db").value,gender:document.querySelector("[name=g]:checked").value,school:$("#school").value,grade:$("#grade").value});S.me=(await api("/me","PUT",b)).user;render()}catch(x){$("#ae").textContent=x.message}};
+    const ef=$("#ef");if(ef)ef.onsubmit=async e=>{e.preventDefault();try{const b={name:$("#nm").value,email:$("#em").value.trim().toLowerCase(),lang:S.lang};if(S.me.role==="user")Object.assign(b,{dob:$("#db").value,gender:document.querySelector("[name=g]:checked").value,school:$("#school").value,grade:$("#grade").value});S.me=(await api("/me","PUT",b)).user;render()}catch(x){$("#ae").textContent=x.message}};
   }
 }
 function bindAuth(){
   const f=$("#f");if(!f)return;
   const sw=$("#sw");if(sw)sw.onclick=()=>{S.auth=S.auth==="login"?"register":"login";S.err="";render()};
-  const rs=$("#rs");if(rs)rs.onclick=async()=>{const r=await api("/resend","POST",{email:S.pend}).catch(()=>({}));S.devCode=r.devCode||"";render()};
   f.onsubmit=async e=>{e.preventDefault();S.err="";
     try{
-      if(S.auth==="verify"){const r=await api("/verify","POST",{email:S.pend,code:$("#cd").value});return enter(r)}
       const em=$("#em").value.trim().toLowerCase(),pw=$("#pw").value;
-      if(S.auth==="register"){const r=await api("/register","POST",{name:$("#nm").value,email:em,password:pw,dob:$("#db").value,gender:document.querySelector("[name=g]:checked").value,lang:S.lang});S.pend=em;S.devCode=r.devCode||"";S.auth="verify";return render()}
-      const r=await api("/login","POST",{email:em,password:pw});
-      if(r.needVerify){S.pend=em;S.devCode=r.devCode||"";S.auth="verify";return render()}
-      enter(r);
+      if(S.auth==="register"){
+        const r=await api("/register","POST",{name:$("#nm").value,email:em,password:pw,dob:$("#db").value,gender:document.querySelector("[name=g]:checked").value,lang:S.lang});
+        return enter(r);
+      }
+      enter(await api("/login","POST",{email:em,password:pw}));
     }catch(x){S.err=x.message;render()}
   };
 }
@@ -505,7 +505,7 @@ function bindDict(){
 }
 function bindRep(){
   $("#rsb").onclick=async()=>{
-    const adm=S.me.role==="org",rep=$("#rp").value.trim();
+    const adm=S.me.role==="org"||S.me.role==="admin",rep=$("#rp").value.trim();
     try{
       if(adm)await api(`/reports/${S.rep.id}/update`,"POST",{reply:rep,note:$("#nt2").value,status:$("#ns").value});
       else{if(!rep)return;await api(`/reports/${S.rep.id}/reply`,"POST",{text:rep})}
@@ -525,11 +525,11 @@ function bindNew(){
 }
 /* ============ الإقلاع ============ */
 async function boot(keep){
-  try{S.mailOk=(await api("/health")).emailConfigured}catch{}
+  
   if(S.tok&&!S.me){try{S.me=(await api("/me")).user}catch{}}
   if(S.me){
     const m=location.hash.match(/^#\/report\/(\d+)/);
-    return m?go("rep",m[1]):go(S.me.role==="org"?"admin":"home");
+    return m?go("rep",m[1]):go(S.me.role==="org"||S.me.role==="admin"?"admin":"home");
   }
   render();
 }
