@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>إشارة | المنصة الوطنية للترجمة الفورية بلغة الإشارة ومناهضة التنمر</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0908;--bg2:#14100f;--card:#1a1413;--line:#2e2321;--tx:#f1ebe0;--mut:#9b8f86;--ac:#7a1f2b;--ac2:#a8323f;--gold:#c2a15a;--ok:#8a9a5b}
+:root[data-theme=light]{--bg:#f4efe6;--bg2:#ebe4d7;--card:#fbf8f2;--line:#d9cfbd;--tx:#241a18;--mut:#6f625a;--ac:#6e1a26;--ac2:#8c2a38;--gold:#8a6d2b;--ok:#5d6b34}
+*{box-sizing:border-box;margin:0}html,body{min-height:100%}
+body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;background:var(--bg);color:var(--tx);padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23c2a15a' stroke-opacity='.07'%3E%3Cpath d='M40 4l36 36-36 36L4 40z'/%3E%3Cpath d='M40 20l20 20-20 20-20-20z'/%3E%3C/g%3E%3Ccircle cx='40' cy='40' r='1.5' fill='%23c2a15a' fill-opacity='.12'/%3E%3C/svg%3E")}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--line);background:transparent;border-radius:10px;padding:.55rem .95rem;transition:.2s}
+button:hover{border-color:var(--gold)}button:disabled{opacity:.5;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,#out:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.pri{background:var(--ac);border-color:var(--ac2);color:#f6efe6}.pri:hover{background:var(--ac2)}
+input,select,textarea{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:.7rem .9rem}
+textarea{min-height:90px;resize:vertical}
+nav{display:flex;align-items:center;gap:1rem;padding:.8rem clamp(1rem,3vw,2rem);border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 85%,transparent);position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}
+.logo{font-weight:700;font-size:1.25rem;display:flex;gap:.5rem;align-items:center}
+.logo i{width:26px;height:26px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-style:normal;color:var(--gold);font-size:.8rem}
+nav .links{display:flex;gap:.2rem;margin-inline-start:1rem}nav .links button{border:0;color:var(--mut)}nav .links button.on{color:var(--tx);background:var(--bg2)}nav .sp{flex:1}
+.av{width:36px;height:36px;border-radius:50%;padding:0;background:var(--ac);border-color:var(--gold);font-weight:600;color:#f6efe6}
+main{padding:clamp(1rem,3vw,2rem);max-width:1400px;margin:auto}
+.grid{display:grid;grid-template-columns:1.35fr 1fr;gap:1.2rem;min-height:calc(100vh - 220px)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.cam{min-height:340px;background:#000;align-items:center;justify-content:center;color:#f1ebe0}
+.cam video,.cam canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.cam .ov{position:relative;z-index:2;text-align:center;padding:1.5rem;max-width:400px}.cam .ov p{color:#b9aea4;margin-top:.8rem;font-size:.9rem}
+.big{padding:1rem 2.4rem;font-size:1.15rem;font-weight:600}
+.tools{position:absolute;z-index:3;inset-inline:.8rem;bottom:.8rem;display:flex;gap:.5rem;flex-wrap:wrap}.tools button{background:#000a;backdrop-filter:blur(6px);color:#f1ebe0;font-size:.85rem}
+.tr{padding:1.4rem}.tr h3,h3.g{font-weight:500;color:var(--gold);font-size:.95rem;margin-bottom:.8rem}
+#out{flex:1;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.6;font-weight:500;outline:0;min-height:120px;word-break:break-word;color:var(--gold)}
+#out:empty:before{content:attr(data-ph);color:var(--mut);font-weight:300;font-size:1rem}
+.act{display:flex;gap:.5rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:1rem;margin-top:1rem}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:.6rem 0}.chips button{border-color:var(--gold);color:var(--gold)}
+.warn{border:1px solid var(--gold);color:var(--gold);border-radius:10px;padding:.6rem .9rem;font-size:.85rem;margin-bottom:1rem;background:color-mix(in srgb,var(--gold) 8%,transparent)}
+.stat{margin-top:1rem;display:flex;align-items:center;gap:.6rem;justify-content:center;color:var(--mut);font-size:.9rem}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--mut)}.live .dot{background:var(--ac2);animation:p 1.6s infinite}@keyframes p{0%{box-shadow:0 0 0 0 var(--ac2)}70%{box-shadow:0 0 0 9px transparent}}
+.center{min-height:100vh;display:grid;place-items:center;padding:1rem}
+.form{width:min(430px,100%);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:2rem 1.6rem;display:grid;gap:1rem}
+.form h1{text-align:center;font-weight:600;font-size:1.5rem}
+label{display:grid;gap:.4rem;font-size:.88rem;color:var(--mut)}.row{display:flex;gap:.6rem;flex-wrap:wrap}.row>*{flex:1}
+.radio{display:flex;gap:1rem;color:var(--tx)}.radio label,.chk{display:flex;gap:.4rem;align-items:center;color:var(--tx)}.radio input,.chk input{width:auto}
+.list{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem}.item small,.note{color:var(--mut)}
+.tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:20px;padding:.1rem .7rem;font-size:.78rem;margin:.4rem 0}
+.acc{max-width:520px;margin:auto;text-align:center}.acc .av{width:96px;height:96px;font-size:2.2rem;margin:1rem auto;display:grid;place-items:center}
+.acc dl{display:grid;grid-template-columns:auto 1fr;gap:.8rem 1.5rem;text-align:start;margin:1.5rem 0}.acc dt{color:var(--mut)}
+h2{font-weight:600;margin-bottom:1rem}.note{font-size:.85rem;margin:.6rem 0}.err{color:#d65a4a;font-size:.88rem}
+.rep{border-inline-start:6px solid var(--line);cursor:pointer}.rep.red{border-inline-start-color:#c0392b}.rep.yellow{border-inline-start-color:#d4a21f}.rep.green{border-inline-start-color:#4f8a4b}
+.st{display:inline-flex;gap:.45rem;align-items:center;font-size:.85rem;font-weight:500}.st i{width:10px;height:10px;border-radius:50%;background:currentColor}.st.red{color:#d65a4a}.st.yellow{color:#d4a21f}.st.green{color:#6fa86a}
+.msg{border:1px solid var(--line);border-radius:10px;padding:.6rem .9rem;margin:.5rem 0;font-size:.92rem}.msg.note{border-style:dashed;color:var(--mut)}.msg b{color:var(--gold);font-weight:500}
+.recbar{border:1px solid var(--ac2);border-radius:12px;padding:.8rem 1rem;margin-bottom:1rem;display:grid;gap:.5rem}
+.bar{height:6px;background:var(--bg2);border-radius:5px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}
+@media(max-width:820px){.grid{grid-template-columns:1fr}.cam{min-height:62vw}nav .links{position:fixed;bottom:0;inset-inline:0;background:var(--bg);border-top:1px solid var(--line);justify-content:space-around;margin:0;padding:.4rem .4rem calc(.4rem + env(safe-area-inset-bottom));z-index:6;overflow-x:auto}main{padding-bottom:5rem}button{min-height:44px}}
+/* واجهة إشارة المستوحاة من التصميم الأصلي، مع إبقاء نظام الترجمة والخادم */
+nav{min-height:78px;gap:1rem;z-index:8}
+.brand{display:flex;align-items:center;gap:.7rem;cursor:pointer;min-width:220px}
+.brand-mark{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#852632,#a93845,#c5a15b);padding:2px;box-shadow:0 6px 20px #3e0d1366;flex-shrink:0}
+.brand-mark i{display:grid;place-items:center;width:100%;height:100%;border-radius:13px;background:var(--card);font-style:normal;color:var(--gold);font-size:1.55rem;font-weight:700}
+.brand-name{font-size:1.5rem;font-weight:700;line-height:1.3}.brand-tag{font-size:.67rem;color:var(--mut);line-height:1.5}
+nav .links{border:1px solid var(--line);border-radius:15px;padding:4px;background:var(--bg2);margin-inline-start:auto}
+nav .links button{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;border-radius:11px;padding:.55rem .75rem}
+nav .links button.on{background:var(--ac);color:#fff}
+.nav-actions{display:flex;align-items:center;gap:.5rem}.nav-actions>button{min-width:39px;min-height:39px;padding:.35rem}
+.av{border-radius:10px}.hero{border:1px solid #85263266;border-radius:16px;padding:1rem 1.2rem;margin-bottom:1.2rem;background:linear-gradient(100deg,#3e0d1340,var(--card),#3e0d1320)}
+.hero h2{font-size:1rem;margin:0 0 .3rem}.hero p{color:var(--mut);font-size:.8rem}
+.page-panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.5rem;margin-bottom:1rem}
+.page-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:1rem;margin-bottom:1rem}
+.page-head h2{margin:0;font-size:1.3rem}.page-head p{font-size:.8rem;color:var(--mut);margin-top:.35rem}
+.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin:1rem 0 1.4rem}.legend>div{border:1px solid;padding:.85rem;border-radius:12px;font-size:.77rem}
+.legend b{display:block;margin-bottom:.35rem}.legend small{opacity:.8}.legend .red{color:#ef4444;background:#dc262612;border-color:#dc26264d}.legend .yellow{color:#eab308;background:#eab30812;border-color:#eab3084d}.legend .green{color:#22c55e;background:#22c55e12;border-color:#22c55e4d}
+.rep-entry{margin-bottom:.8rem;border-inline-start-width:4px}.rep-entry .rep-top{display:flex;justify-content:space-between;gap:.7rem;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:.55rem;margin-bottom:.7rem}.rep-entry .reply{background:var(--bg2);padding:.65rem;border-radius:8px;margin-top:.8rem;font-size:.83rem}
+.admin-scroll{overflow-x:auto}.admin-table{width:100%;border-collapse:collapse;font-size:.78rem;text-align:start;min-width:850px}.admin-table th,.admin-table td{padding:.8rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}.admin-table th{background:var(--bg2);color:var(--mut);font-weight:600}.admin-table td button{font-size:.75rem;padding:.35rem .5rem;margin:.15rem}.admin-table .excerpt{max-width:240px;overflow-wrap:anywhere}
+.profile-wrap{max-width:760px;margin:auto}.profile-fields{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.profile-notice{border:1px solid var(--line);background:var(--bg2);padding:1rem;border-radius:12px;font-size:.82rem;color:var(--mut)}
+.profile-top{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap}.verified{color:#22c55e;border:1px solid #22c55e55;border-radius:20px;padding:.25rem .7rem;font-size:.78rem}
+.report-form{width:min(580px,100%);max-width:100%;margin:auto}.report-form h1{text-align:start}.report-form .row{align-items:center}
+@media(max-width:1000px){.brand{min-width:unset}.brand-tag{max-width:160px}nav .links{margin-inline-start:0}}
+@media(max-width:820px){nav{flex-wrap:wrap}.brand-tag{max-width:unset}nav .links{position:fixed;bottom:0;inset-inline:0;border-radius:0;justify-content:space-around;background:var(--bg);padding:.5rem .3rem calc(.5rem + env(safe-area-inset-bottom));overflow-x:auto}nav .links button{font-size:.72rem;padding:.4rem}.nav-actions{margin-inline-start:auto}.legend{grid-template-columns:1fr}.profile-fields{grid-template-columns:1fr}.page-panel{padding:1rem}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script type="module">
+/* ============ الترجمة ============ */
+const R=`home|المترجم الذكي|Smart Translator
+dict|قاموس الإشارات|Sign dictionary
+reports|متابعة البلاغات|Track Reports
+admin|لوحة المسؤول|Admin Portal
+account|حسابي|My Account
+login|تسجيل الدخول|Sign in
+register|إنشاء حساب|Create account
+logout|خروج|Sign out
+name|الاسم الكامل|Full name
+email|البريد الإلكتروني|Email
+password|كلمة المرور (8 أحرف على الأقل)|Password (min 8 chars)
+dob|تاريخ الميلاد|Date of birth
+gender|الجنس|Gender
+male|ذكر|Male
+female|أنثى|Female
+age|العمر|Age
+years|سنة|years
+cont|متابعة|Continue
+verifyT|تأكيد البريد الإلكتروني|Verify your email
+verifyD|أرسلنا رمزًا من 6 أرقام إلى بريدك. لا يكتمل الحساب إلا بعد التأكيد.|We sent a 6-digit code to your email. Your account is incomplete until verified.
+code|رمز التحقق|Verification code
+verify|تأكيد|Verify
+resend|إعادة إرسال الرمز|Resend code
+verified|✓ مؤكد|✓ verified
+open|فتح الكاميرا|Open camera
+allow|اسمح للكاميرا لتتبع اليدين. لا يُسجَّل أي فيديو ولا تُحفظ صورتك؛ المعالجة داخل المتصفح.|Allow camera to track your hands. No video is recorded or saved; processing happens in your browser.
+tr|النص المترجم|Translated text
+ph|سيظهر النص هنا عند التعرف على إشاراتك…|Your text appears here as signs are recognised…
+start|بدء الترجمة|Start translating
+stop|إيقاف|Stop
+show|إظهار التتبع|Show tracking
+hide|إخفاء التتبع|Hide tracking
+clear|مسح|Clear
+copy|نسخ|Copy
+speak|نطق|Speak
+mkrep|إرسال البلاغ للجهة المختصة الآن|Submit Anti-Bullying Report Now
+comma|،|،
+period|.|.
+idle|جاهز|Ready
+run|جارٍ التقاط الإشارات…|Listening for signs…
+loading|جارٍ فتح الكاميرا…|Opening camera…
+loadingModel|جارٍ تحميل نموذج اليد…|Loading hand model…
+camerr|تعذر فتح الكاميرا (يلزم HTTPS أو localhost وإذن الكاميرا).|Camera unavailable (needs HTTPS/localhost and permission).
+modelerr|تعذر تحميل نموذج اليد (تحقق من الاتصال).|Could not load hand model (check connection).
+unclear|لم يتم التعرف على الإشارة بوضوح، حاول مرة أخرى.|Sign not recognised clearly, please try again.
+nosamples|لا توجد إشارات مدرّبة بعد. سجّل إشاراتك من «قاموس الإشارات».|No trained signs yet. Record signs from the dictionary.
+pick|هل تقصد إحدى هذه؟|Did you mean one of these?
+trained|إشارات مدرّبة|Trained signs
+honest|هذه النسخة تتعرف فقط على الإشارات التي سجّلتها أنت (أو نموذج مدرّب تربطه). ولا تخمّن أبدًا: عند الشك تعرض خيارات أو رسالة عدم وضوح.|This build only recognises signs you recorded (or a trained model you plug in). It never guesses: when unsure it offers options or says it is unclear.
+dictSearch|ابحث…|Search…
+addWord|إضافة كلمة/اسم جديد|Add new word/name
+add|إضافة|Add
+word|كلمة|Word
+phrase|عبارة|Phrase
+letter|حرف|Letter
+number|رقم|Number
+samples|عينات|samples
+rec|تسجيل|Record
+delS|حذف العينات|Delete samples
+recT|تسجيل إشارة:|Recording sign:
+recGo|ابدأ التسجيل|Start recording
+recDone|إنهاء|Done
+recHint|سجّل 3 عينات على الأقل (بيد واحدة أو يدين كما ستستخدمها). تُحفظ إحداثيات المفاصل فقط.|Record at least 3 samples. Only hand-joint coordinates are stored, not video.
+recFail|لم تُلتقط اليد بوضوح، أعد المحاولة.|Hand not captured clearly, retry.
+recSaved|تم حفظ عينة|Sample saved
+recing|أدِّ الإشارة الآن…|Sign now…
+sendRep|إرسال وتوثيق بالبريد|Submit and Verify by Email
+kind|نوع التنمر|Type of bullying
+physical|جسدي|Physical
+verbal|لفظي|Verbal
+cyber|إلكتروني|Cyber
+social|اجتماعي|Social
+other|آخر|Other
+org|الجهة|Organization
+details|تفاصيل الحادثة (اختياري)|Incident details (optional)
+evidence|أدلة (صور، اختياري)|Evidence (images, optional)
+reviewNote|راجع النص وعدّله قبل الإرسال. سيتم إرسال البلاغ إلى الجهة المختصة وإشعارك بالبريد عند تفعيل خدمة البريد.|Review and edit before sending. The report goes to the selected organization; email updates require email service configuration.
+sent|تم إرسال البلاغ. رقمه:|Report sent. Number:
+none|لا توجد بلاغات.|No reports.
+back|رجوع|Back
+reply|اكتب ردًا…|Write a reply…
+note|ملاحظة داخلية (لا يراها المستخدم)|Internal note (hidden from user)
+setStatus|تغيير الحالة|Change status
+save|حفظ|Save
+edit|تعديل|Edit
+saved|تم الحفظ|Saved
+send|إرسال|Send
+reporter|مقدّم البلاغ|Reporter
+mailOff|خدمة البريد غير مضبوطة على الخادم: الرسائل تُطبع في سجل الخادم ولا تصل فعليًا.|Email service is not configured on the server: messages are only logged, not delivered.
+theme|المظهر|Theme
+lang|English|عربي
+fromUser|المستخدم|User
+fromOrg|الجهة|Organization
+school|المدرسة / الجهة التعليمية|School / Educational institution
+grade|الصف الدراسي / الفصل|Grade / Class
+profileTitle|توثيق الحساب والبريد الإلكتروني|Account and Email Verification
+profileDesc|لضمان وصول تحديثات البلاغات إلى بريدك المسجل.|Receive report updates at your registered email address.
+profileNotice|إشعار التوثيق عبر البريد|Email verification notice
+profileNoticeDesc|ترسل إشعارات متابعة البلاغات إلى البريد المسجل عند تفعيل خدمة البريد في الخادم.|Report updates are emailed to your registered address when server email is configured.
+reportTitle|إعداد وتأكيد إرسال بلاغ ضد التنمر|Prepare and Confirm Anti-Bullying Report
+reportIntro|اختر نوع التنمر والجهة المختصة، ثم راجع النص وأرسل البلاغ.|Select the bullying type and organization, review your text, then submit.
+reportsTitle|سجل ومتابعة البلاغات ضد التنمر|Anti-Bullying Reports Log and Tracking
+reportsDesc|تابع حالة بلاغاتك بالرمز الملون: الأحمر لم يتم الاستلام، الأصفر قيد المراجعة، الأخضر تم الاستلام أو الحل.|Follow your reports by status: red not received, yellow under review, green received or resolved.
+adminTitle|إدارة البلاغات ومراجعة قضايا التنمر|Report Management and Bullying Case Review
+adminDesc|خاص بمسؤولي الجهات المختصة لاستلام البلاغات ومراجعتها والرد عليها.|For authorized organization staff to receive, review and respond to reports.
+reportCount|إجمالي البلاغات|Total reports
+newReport|تقديم بلاغ جديد|New report
+reportNumber|رقم البلاغ|Report number
+reporterName|اسم الطالب/المرسل|Student / Sender
+orgGrade|الجهة والصف|Organization / Grade
+reportBody|فحوى الرسالة|Report message
+reportDate|التاريخ|Date
+currentStatus|الحالة الحالية|Current status
+adminAction|تحديث الحالة والإجابة|Update status and reply
+adminReply|إجابة المسؤول|Administrator response
+noReply|لا توجد إجابة حتى الآن|No response yet
+redTitle|الحالة الحمراء (لم يتم الاستلام)|Red (Not received)
+redDesc|البلاغ لم يُستلم بعد من الجهة المختصة.|The organization has not yet received the report.
+yellowTitle|الحالة الصفراء (قيد المراجعة)|Yellow (Under review)
+yellowDesc|البلاغ قيد المعالجة لدى الجهة المختصة.|The organization is reviewing the report.
+greenTitle|الحالة الخضراء (تم الاستلام / الحل)|Green (Received / Resolved)
+greenDesc|تم استلام البلاغ أو حل المشكلة حسب الحالة المعروضة.|The report has been received or resolved, as indicated by its status.
+physicalVerbal|جسدي ولفظي|Physical and verbal
+verbalMock|تنمر لفظي وسخرية من لغة الإشارة|Verbal bullying and sign-language mockery
+cyberThreat|اعتداء وتخويف إلكتروني|Cyberbullying and threats
+socialExclude|استبعاد ونبذ اجتماعي متعمد|Deliberate social exclusion
+recipient|الجهة المختصة الموجه لها البلاغ|Report recipient
+reportText|فحوى ومضمون البلاغ (المترجم من لغة الإشارة)|Report content (translated from sign language)`.split("\n").map(l=>l.split("|"));
+const L={ar:{},en:{}};R.forEach(([k,a,e])=>{L.ar[k]=a;L.en[k]=e});
+const ORGS=[["school","مدرسة","School"],["univ","جامعة","University"],["edu","جهة تعليمية","Educational body"],["auth","جهة مختصة","Competent authority"]];
+const ST={new:["red","لم يتم الاستلام","Not received"],received:["green","تم الاستلام","Received"],review:["yellow","قيد المراجعة","Under review"],info:["yellow","يحتاج معلومات إضافية","More info needed"],action:["yellow","تم اتخاذ إجراء","Action taken"],resolved:["green","تم الحل","Resolved"],closed:["green","مغلق","Closed"]};
+
+/* ============ الحالة والأدوات ============ */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const ls=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
+const S={tok:ls("tok",null),me:null,lang:ls("l","ar"),theme:ls("t","dark"),page:"home",auth:"login",pend:null,devCode:"",err:"",
+ text:"",words:[],cam:false,run:false,track:true,status:"idle",sigs:[],cand:null,msg:"",rec:null,reports:[],rep:null,edit:false,mailOk:true,customWords:[]};
+const t=k=>L[S.lang][k]??k,L2=a=>S.lang==="ar"?a[1]:a[2];
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt=d=>new Date(d).toLocaleString(S.lang==="ar"?"ar-SA":"en-GB");
+const age=d=>{const b=new Date(d),n=new Date();let a=n.getFullYear()-b.getFullYear();if(n<new Date(n.getFullYear(),b.getMonth(),b.getDate()))a--;return a};
+async function api(p,m="GET",b){
+  const r=await fetch((window.ISSARA_BACKEND_URL||"")+"/api"+p,{method:m,headers:{"Content-Type":"application/json",...(S.tok?{Authorization:"Bearer "+S.tok}:{})},body:b?JSON.stringify(b):undefined});
+  let j={};try{j=await r.json()}catch{}
+  if(!r.ok){if(r.status===401&&S.tok)logout(true);throw Object.assign(new Error(j.error||r.status),{data:j})}
+  return j;
+}
+
+/* ============ التعرف: تتبع، تنعيم، ميزات، تسلسل ============ */
+let lm=null,stream=null,raf=0,lastT=-1;const PV=[null,null];
+const CONN=[[0,1],[1,2],[2,3],[3,4],[0,5],[5,6],[6,7],[7,8],[5,9],[9,10],[10,11],[11,12],[9,13],[13,14],[14,15],[15,16],[13,17],[17,18],[18,19],[19,20],[0,17]];
+const CDN="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14";
+async function initLm(delegate){
+  const m=await import(CDN+"/vision_bundle.mjs"),fs=await m.FilesetResolver.forVisionTasks(CDN+"/wasm");
+  lm=await m.HandLandmarker.createFromOptions(fs,{baseOptions:{modelAssetPath:"https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",delegate},runningMode:"VIDEO",numHands:2,minHandDetectionConfidence:.4,minHandPresenceConfidence:.4,minTrackingConfidence:.4});
+}
+/* تنعيم تكيّفي: يثبّت المفاصل عند السكون ولا يؤخر الحركة السريعة */
+function smoothHands(res){
+  const out=[],used=[0,0];
+  (res.landmarks||[]).forEach((h,i)=>{
+    let s=res.handedness?.[i]?.[0]?.categoryName==="Left"?0:1;if(used[s])s=1-s;used[s]=1;const p=PV[s];
+    const n=!p?h.map(q=>({x:q.x,y:q.y,z:q.z})):h.map((q,j)=>{const a=Math.min(.95,.3+Math.hypot(q.x-p[j].x,q.y-p[j].y)*14);return{x:p[j].x+(q.x-p[j].x)*a,y:p[j].y+(q.y-p[j].y)*a,z:p[j].z+(q.z-p[j].z)*a}});
+    PV[s]=n;out.push({s,p:n});
+  });
+  [0,1].forEach(s=>{if(!used[s])PV[s]=null});return out;
+}
+/* متجه الإطار: لكل يد 66 قيمة = شكل الأصابع والمفاصل (نسبةً للمعصم وحجم الكف) + موضع المعصم + حضور اليد */
+function vec(hands){
+  const f=new Float32Array(132);
+  hands.forEach(({s,p})=>{const o=s*66,w=p[0],sc=Math.hypot(p[9].x-w.x,p[9].y-w.y)||1;
+    p.forEach((q,j)=>{f[o+j*3]=(q.x-w.x)/sc;f[o+j*3+1]=(q.y-w.y)/sc;f[o+j*3+2]=(q.z-w.z)/sc});
+    f[o+63]=w.x;f[o+64]=w.y;f[o+65]=1});
+  return f;
+}
+/* تسلسل زمني ثابت الطول (16 إطارًا) غير حساس لمكان اليد في الصورة؛ يحتفظ بمسار الحركة وسرعتها */
+function prep(fr){
+  fr=fr.filter(f=>f[65]||f[131]);if(fr.length<4)return null;
+  const m=[0,0,0,0,0,0];
+  fr.forEach(f=>[0,1].forEach(s=>{if(f[s*66+65]){m[s*3]+=f[s*66+63];m[s*3+1]+=f[s*66+64];m[s*3+2]++}}));
+  return Array.from({length:16},(_,i)=>{
+    const f=Float32Array.from(fr[Math.round(i*(fr.length-1)/15)]);
+    [0,1].forEach(s=>{const o=s*66;if(f[o+65]){f[o+63]=(f[o+63]-m[s*3]/m[s*3+2])*3;f[o+64]=(f[o+64]-m[s*3+1]/m[s*3+2])*3;f[o+65]=2}});
+    return f;
+  });
+}
+/* مرآة: يعرّف الإشارة سواء استخدم المستخدم اليد اليمنى أو اليسرى */
+const mir=q=>q.map(f=>{const g=new Float32Array(132);[0,1].forEach(s=>{const o=s*66,d=(1-s)*66;for(let j=0;j<66;j++){let v=f[o+j];if((j<63&&j%3===0)||j===63)v=-v;g[d+j]=v}});return g});
+const dist=(a,b)=>{let s=0;for(let i=0;i<16;i++){let e=0;const x=a[i],y=b[i];for(let k=0;k<132;k++){const d=x[k]-y[k];e+=d*d}s+=Math.sqrt(e/132)}return s/16};
+function classify(q){
+  const ext=window.issaraModel?.classify?.(q);if(ext?.length)return ext; /* ربط نموذج مدرّب خارجي: [{w,type,c}] */
+  const m=mir(q),best={};
+  S.sigs.forEach(s=>{const d=Math.min(dist(q,s.seq),dist(m,s.seq));if(!best[s.word]||d<best[s.word].d)best[s.word]={w:s.word,type:s.type,d}});
+  return Object.values(best).sort((a,b)=>a.d-b.d).slice(0,3).map(x=>({...x,c:1/(1+Math.exp((x.d-.38)/.07))}));
+}
+/* تقطيع الإشارات: تبدأ بظهور اليد وتنتهي بغيابها أو بثباتها، دون الاعتماد على صورة واحدة */
+let seg=[],lastSeen=0,stillSince=0,lock=false,prevW=null,spell=[],spellTimer=0,msgTimer=0;
+function step(hands){
+  const now=performance.now();
+  if(S.rec){if(S.rec.on)S.rec.f.push(vec(hands));return}
+  if(!S.run)return;
+  if(hands.length){
+    lastSeen=now;const w=hands[0].p[0],sp=prevW?Math.hypot(w.x-prevW.x,w.y-prevW.y):1;prevW=w;
+    if(sp>.006){stillSince=now;lock=false}
+    if(lock)return;seg.push(vec(hands));if(seg.length>150)seg.shift();
+    if(seg.length>=10&&now-stillSince>650){finalize(seg);seg=[];lock=true}
+  }else{
+    prevW=null;if(seg.length&&now-lastSeen>450){if(seg.length>=6)finalize(seg);seg=[]}
+    lock=false;stillSince=now;
+  }
+}
+function flash(k){S.msg=k;showMsg();clearTimeout(msgTimer);msgTimer=setTimeout(()=>{S.msg="";showMsg()},3500)}
+function finalize(frames){
+  const q=prep(frames);if(!q)return;
+  if(!S.sigs.length&&!window.issaraModel)return flash("nosamples");
+  const r=classify(q),top=r[0];
+  if(top&&top.c>=.65&&(!r[1]||r[1].d-top.d>.04)){S.cand=null;addWord(top.w,top.type)}   /* تثبيت بعتبة ثقة وهامش عن المنافس */
+  else if(top&&top.c>=.3){S.cand=r.filter(x=>x.c>=.2);showCand()}                    /* أكثر من احتمال: يختار المستخدم */
+  else flash("unclear");                                                                /* لا كلمة عشوائية أبدًا */
+}
+const SP=new Set(["LETTER","NUMBER"]);
+function flushSpell(){if(spell.length){S.words.push(spell.join(""));spell=[]}}
+function addWord(w,type){
+  clearTimeout(spellTimer);S.cand=null;
+  if(SP.has(type)){spell.push(w);spellTimer=setTimeout(()=>{flushSpell();syncText()},1800)}else{flushSpell();S.words.push(w)}
+  syncText();showCand();
+}
+/* ============ تصحيح النص العربي (قواعد محافظة: لا تغيّر المعنى ولا تضيف معلومات) ============ */
+const FIX={"انا":"أنا","احتاج":"أحتاج","مساعده":"مساعدة","الى":"إلى","اني":"أني","ان":"أن","اذا":"إذا","اريد":"أريد","ارجو":"أرجو","اشعر":"أشعر","استاذ":"أستاذ","الاستاذ":"الأستاذ","ايضا":"أيضًا","الان":"الآن","مدرسه":"مدرسة","المدرسه":"المدرسة","جامعه":"جامعة","الجامعه":"الجامعة","لفظيا":"لفظيًا","جسديا":"جسديًا","الكترونيا":"إلكترونيًا","شكرا":"شكرًا","خايف":"خائف","اعتدى":"اعتدى"};
+function correct(ws){
+  const o=[];ws.forEach(w=>{w=FIX[w]||w;if(w!==o[o.length-1]||w==="،"||w===".")o.push(w)});
+  let s="",glue=false;
+  o.forEach(w=>{if(w==="،"||w==="."||w==="؟"){s+=w;return}s+=(s&&!glue?" ":"")+w;glue=w==="و"});
+  s=s.replace(/\s+/g," ").trim();if(s&&!/[.؟!]$/.test(s))s+=".";return s;
+}
+function syncText(){S.text=correct(spell.length?[...S.words,spell.join("")]:S.words);const o=$("#out");if(o&&document.activeElement!==o)o.textContent=S.text}
+function showCand(){
+  const c=$("#cand");if(!c)return;
+  c.innerHTML=S.cand?`<div class="note">${t("pick")}</div><div class="chips">${S.cand.map(x=>`<button data-c="${esc(x.w)}" data-ty="${x.type}">${esc(x.w)} · ${Math.round(x.c*100)}%</button>`).join("")}</div>`:"";
+  $$("[data-c]").forEach(b=>b.onclick=()=>addWord(b.dataset.c,b.dataset.ty));
+}
+function showMsg(){const m=$("#msg");if(m)m.textContent=S.msg?t(S.msg):""}
+
+/* ============ الكاميرا ============ */
+async function openCam(){
+  S.status="loading";upSt();
+  try{if(!stream)stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user",width:{ideal:960},height:{ideal:540},frameRate:{ideal:60}},audio:false})}
+  catch{S.status="camerr";upSt();return}
+  S.cam=true;renderCam();const v=$("#v");v.srcObject=stream;await v.play().catch(()=>{});
+  if(!lm){S.status="loadingModel";upSt();try{await initLm("GPU")}catch{try{await initLm("CPU")}catch{S.status="modelerr";upSt();return}}}
+  S.status="idle";upSt();cancelAnimationFrame(raf);loop();
+}
+function loop(){
+  raf=requestAnimationFrame(loop);const v=$("#v"),c=$("#c");
+  if(!v||!c||!lm||v.readyState<2||v.currentTime===lastT)return;lastT=v.currentTime;
+  const hands=smoothHands(lm.detectForVideo(v,performance.now()));step(hands);
+  const x=c.getContext("2d");c.width=v.videoWidth;c.height=v.videoHeight;x.clearRect(0,0,c.width,c.height);if(!S.track)return;
+  hands.forEach(({p})=>{x.lineWidth=2.5;x.strokeStyle="rgba(241,235,224,.85)";x.shadowColor="#c2a15a";x.shadowBlur=10;
+    CONN.forEach(([a,b])=>{x.beginPath();x.moveTo(p[a].x*c.width,p[a].y*c.height);x.lineTo(p[b].x*c.width,p[b].y*c.height);x.stroke()});
+    x.shadowBlur=0;p.forEach((q,i)=>{x.beginPath();x.arc(q.x*c.width,q.y*c.height,i%4===0&&i?5:3.5,0,7);x.fillStyle=i%4===0&&i?"#c2a15a":"#f1ebe0";x.fill()})});
+}
+function stopCam(){cancelAnimationFrame(raf);S.cam=false;S.run=false;seg=[];stream?.getTracks().forEach(x=>x.stop());stream=null}
+function camHTML(){return `<video id="v" playsinline muted></video><canvas id="c"></canvas><div class="tools"><button id="run" class="${S.run?"":"pri"}">${S.run?t("stop"):t("start")}</button><button id="tg">${S.track?t("hide"):t("show")}</button></div>`}
+function renderCam(){const c=$("#cam");if(!c)return;c.innerHTML=camHTML();bindCam()}
+function bindCam(){
+  $("#run").onclick=()=>{S.run=!S.run;seg=[];lock=false;S.status=S.run?"run":"idle";$("#run").textContent=S.run?t("stop"):t("start");$("#run").className=S.run?"":"pri";upSt()};
+  $("#tg").onclick=()=>{S.track=!S.track;$("#tg").textContent=S.track?t("hide"):t("show")};
+}
+function upSt(){const s=$("#st");if(s){s.className="stat "+(S.run?"live":"");s.innerHTML=`<span class="dot"></span>${t(S.status)}`}}
+
+/* ============ تسجيل عينات الإشارات (تدريب) ============ */
+async function startRec(){
+  const r=S.rec;if(!r||r.busy)return;if(!S.cam||!lm)return flash("camerr");r.busy=true;r.f=[];
+  for(let i=3;i>0;i--){recMsg(i);await new Promise(z=>setTimeout(z,900))}
+  recMsg(t("recing"));r.on=true;await new Promise(z=>setTimeout(z,2200));r.on=false;
+  const q=prep(r.f);
+  if(!q){recMsg(t("recFail"));r.busy=false;return}
+  try{const seq=q.map(f=>Array.from(f,x=>+x.toFixed(4)));await api("/signs","POST",{word:r.word,type:r.type,seq});S.sigs.push({word:r.word,type:r.type,seq});r.n++;recMsg(`${t("recSaved")} (${r.n})`)}
+  catch(e){recMsg(e.message)}r.busy=false;
+}
+const recMsg=m=>{const e=$("#recm");if(e)e.textContent=m};
+
+/* ============ العرض ============ */
+const nav=()=>{
+  const pages=S.me.role==="org"?["admin","account"]:["home","dict","reports","account"];
+  const icons={home:"◉",dict:"✋",reports:"⬡",admin:"♙",account:"♙"};
+  return `<nav><div class="brand" data-p="${S.me.role==="org"?"admin":"home"}"><div class="brand-mark"><i>إ</i></div><div><div class="brand-name">إشَارَة</div><div class="brand-tag">${S.lang==="ar"?"ترجمة لغة الإشارة ومناهضة التنمر ذكياً":"AI Sign Translation & Anti-Bullying Platform"}</div></div></div><div class="links">${pages.filter(p=>p!=="account").map(p=>`<button data-p="${p}" class="${S.page===p?"on":""}"><span>${icons[p]}</span>${t(p)}</button>`).join("")}</div><span class="sp"></span><div class="nav-actions"><button id="lg" title="Language">${t("lang")}</button><button id="th" aria-label="${t("theme")}">◐</button><button class="av" data-p="account" title="${t("account")}">${esc([...S.me.name][0])}</button></div></nav>`;
+};
+function authView(){
+  const m=S.auth;
+  if(m==="verify")return `<div class="center"><form class="form" id="f"><div class="logo" style="justify-content:center"><i>✋</i>إشارة</div><h1>${t("verifyT")}</h1><p class="note" style="text-align:center">${t("verifyD")}</p>${S.devCode?`<p class="note" style="text-align:center">DEV: ${esc(S.devCode)}</p>`:""}<label>${t("code")}<input id="cd" inputmode="numeric" maxlength="6" required autocomplete="one-time-code" style="text-align:center;font-size:1.4rem;letter-spacing:6px"></label><div class="err">${esc(S.err)}</div><button class="pri" style="padding:.8rem">${t("verify")}</button><button type="button" id="rs">${t("resend")}</button></form></div>`;
+  const reg=m==="register";
+  return `<div class="center"><form class="form" id="f"><div class="logo" style="justify-content:center"><i>✋</i>إشارة</div><h1>${reg?t("register"):t("login")}</h1>
+  ${reg?`<label>${t("name")}<input id="nm" required></label>`:""}<label>${t("email")}<input id="em" type="email" required autocomplete="email"></label>
+  <label>${t("password")}<input id="pw" type="password" minlength="${reg?8:1}" required autocomplete="${reg?"new-password":"current-password"}"></label>
+  ${reg?`<label>${t("dob")}<input id="db" type="date" required></label><label>${t("gender")}<span class="radio"><label><input type="radio" name="g" value="m" checked>${t("male")}</label><label><input type="radio" name="g" value="f">${t("female")}</label></span></label>`:""}
+  <div class="err">${esc(S.err)}</div><button class="pri" style="padding:.8rem">${reg?t("register"):t("login")}</button>
+  <button type="button" id="sw">${reg?t("login"):t("register")}</button><button type="button" id="lg">${t("lang")}</button></form></div>`;
+}
+function home(){
+  const inf=S.rec?`<div class="recbar"><b>${t("recT")} ${esc(S.rec.word)}</b><div class="note">${t("recHint")}</div><div class="row"><button class="pri" id="rg">${t("recGo")}</button><button id="rd">${t("recDone")}</button></div><div id="recm" class="note"></div></div>`:"";
+  return `<div class="hero"><h2>${S.lang==="ar"?"نظام الترجمة الفورية بالذكاء الاصطناعي":"Real-Time AI Sign Language Translation"}</h2><p>${S.lang==="ar"?"قم بتفعيل الكاميرا، واستخدم إشارات اليدين ليظهر النص المترجم. يمكنك مراجعته ثم إرساله كبلاغ.":"Turn on the camera, sign to generate text, review it and submit a report."}</p></div><div class="grid"><section class="panel cam" id="cam">${S.cam?camHTML():`<div class="ov"><button class="pri big" id="open">${t("open")}</button><p>${t("allow")}</p></div>`}</section>
+  <section class="panel tr"><div class="warn">${t("honest")} · ${t("trained")}: ${new Set(S.sigs.map(s=>s.word)).size}</div>${inf}
+  <h3>${t("tr")}</h3><div id="out" contenteditable="true" data-ph="${t("ph")}">${esc(S.text)}</div><div id="msg" class="err"></div><div id="cand"></div>
+  <div class="act"><button id="cl">${t("clear")}</button><button id="cp">${t("copy")}</button><button id="sp">${t("speak")}</button><button id="cm">،</button><button id="pd">.</button><button id="sr" class="pri">${t("mkrep")}</button></div><p class="note">${t("reviewNote")}</p></section></div><div class="stat" id="st"><span class="dot"></span>${t(S.status)}</div>`;
+}
+/* قاموس البداية: مفردات البلاغات + الحروف + الأرقام. جاهزة للتسجيل وليست مدرّبة مسبقًا */
+const SEED=("WORD:أنا،أنت،أحتاج،مساعدة،تم،التنمر،علي،في،الفصل،المدرسة،الجامعة،المعلم،زميل،ضرب،دفع،سب،تهديد،أخذ،خائف،أرجو،شكرًا،طوارئ،خطر،نعم،لا،متى،أين،اليوم،أمس،و|PHRASE:من قبل،تعرضت للتنمر،لفظيًا،جسديًا،إلكترونيًا|LETTER:"+"أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و لا ي ة".split(" ").join("،")+"|NUMBER:0،1،2،3،4،5،6،7،8،9").split("|").flatMap(g=>{const[ty,l]=g.split(":");return l.split("،").map(w=>({word:w,type:ty}))});
+function dictPage(q=""){
+  const known=new Set(SEED.map(d=>d.word)),extra=[...new Map(S.sigs.filter(s=>!known.has(s.word)).map(s=>[s.word,{word:s.word,type:s.type}])).values()];
+  const cnt=w=>S.sigs.filter(s=>s.word===w).length,all=[...SEED,...extra].filter(d=>!q||d.word.includes(q));
+  const tp={WORD:t("word"),PHRASE:t("phrase"),LETTER:t("letter"),NUMBER:t("number")};
+  return `<h2>${t("dict")}</h2><div class="warn">${t("honest")}</div>
+  <div class="row" style="max-width:640px;margin-bottom:1rem"><input id="q" placeholder="${t("dictSearch")}" value="${esc(q)}"></div>
+  <div class="row" style="max-width:640px;margin-bottom:1.2rem"><input id="nw" placeholder="${t("addWord")}"><select id="nt" style="max-width:130px">${Object.entries(tp).map(([k,v])=>`<option value="${k}">${v}</option>`).join("")}</select><button id="na" style="flex:0">${t("add")}</button></div>
+  <div class="list">${all.map(d=>`<div class="item"><b style="font-size:1.3rem">${esc(d.word)}</b><br><span class="tag">${tp[d.type]}</span> <small>${cnt(d.word)} ${t("samples")}</small><div class="row" style="margin-top:.5rem"><button data-r="${esc(d.word)}" data-ty="${d.type}">${t("rec")}</button>${cnt(d.word)?`<button data-x="${esc(d.word)}">${t("delS")}</button>`:""}</div></div>`).join("")}</div>`;
+}
+const stTag=k=>`<span class="st ${ST[k][0]}"><i></i>${L2(ST[k])}</span>`;
+const orgN=k=>L2(ORGS.find(o=>o[0]===k)||[k,k,k]);
+const kindN=ks=>ks.map(k=>t(k)).join("، ");
+function repsPage(){
+ const adm=S.me.role==="org";
+ const header=`<div class="page-head"><div>${adm?`<span class="tag">${t("admin")}</span>`:""}<h2>${t(adm?"adminTitle":"reportsTitle")}</h2><p>${t(adm?"adminDesc":"reportsDesc")}</p></div>${adm?`<div>${t("reportCount")}: <b class="tag">${S.reports.length}</b></div>`:`<button class="pri" data-p="newrep">+ ${t("newReport")}</button>`}</div>`;
+ if(adm)return `<section class="page-panel">${header}<div class="admin-scroll"><table class="admin-table"><thead><tr>${["reportNumber","reporterName","orgGrade","kind","reportBody","reportDate","currentStatus","adminAction"].map(k=>`<th>${t(k)}</th>`).join("")}</tr></thead><tbody>${S.reports.map(r=>`<tr><td><b>#${r.id}</b></td><td>${esc(r.reporter?.name||"—")}</td><td>${orgN(r.org)}${r.reporter?.school?` / ${esc(r.reporter.school)}`:""}${r.reporter?.grade?` / ${esc(r.reporter.grade)}`:""}</td><td>${kindN(r.kind)}</td><td class="excerpt">${esc(r.text.slice(0,140))}</td><td>${fmt(r.created)}</td><td>${stTag(r.status)}</td><td><button class="pri" data-o="${r.id}">${t("edit")} / ${t("setStatus")}</button></td></tr>`).join("")||`<tr><td colspan="8">${t("none")}</td></tr>`}</tbody></table></div></section>`;
+ const legend=`<div class="legend"><div class="red"><b>🔴 ${t("redTitle")}</b><small>${t("redDesc")}</small></div><div class="yellow"><b>🟡 ${t("yellowTitle")}</b><small>${t("yellowDesc")}</small></div><div class="green"><b>🟢 ${t("greenTitle")}</b><small>${t("greenDesc")}</small></div></div>`;
+ return `<section class="page-panel">${header}${legend}${S.reports.length?S.reports.map(r=>`<div class="item rep rep-entry ${ST[r.status][0]}" data-o="${r.id}"><div class="rep-top"><b style="color:var(--gold)">#${r.id} · ${kindN(r.kind)}</b>${stTag(r.status)}</div><p>${esc(r.text)}</p><div class="reply"><b>${t("adminReply")}: </b>${esc(r.lastReply||t("noReply"))}<small style="float:inline-end">${fmt(r.created)}</small></div></div>`).join(""):`<p class="note">${t("none")}</p>`}</section>`;
+}
+function repDetail(){
+  const r=S.rep,adm=S.me.role==="org";
+  return `<button data-p="${adm?"admin":"reports"}">← ${t("back")}</button><h2 style="margin-top:1rem">#${r.id}</h2><div class="item rep ${ST[r.status][0]}" style="max-width:760px">
+  ${stTag(r.status)} <small>· ${orgN(r.org)} · ${fmt(r.created)}</small>
+  ${r.kind.length?`<p class="note">${t("kind")}: ${kindN(r.kind)}</p>`:""}<p style="font-size:1.15rem;margin:.6rem 0">${esc(r.text)}</p>${r.details?`<p class="note">${esc(r.details)}</p>`:""}
+  ${adm&&r.reporter?`<p class="note">${t("reporter")}: ${esc(r.reporter.name)} · ${esc(r.reporter.email)} · ${age(r.reporter.dob)} ${t("years")}</p>`:""}
+  ${(r.attach||[]).map(a=>`<img src="${esc(a)}" style="max-width:100%;max-height:260px;border-radius:10px;margin:.4rem 0">`).join("")}
+  <h3 class="g" style="margin-top:1rem">${t("reports")}</h3>${r.msgs.map(m=>`<div class="msg ${m.kind==="note"?"note":""}"><b>${m.kind==="note"?"🔒 "+t("note"):m.who==="org"?t("fromOrg"):t("fromUser")}</b> · <small>${fmt(m.created)}</small><br>${esc(m.text)}</div>`).join("")}
+  <textarea id="rp" placeholder="${t("reply")}"></textarea>
+  ${adm?`<textarea id="nt2" placeholder="${t("note")}" style="min-height:60px;margin-top:.5rem"></textarea><label style="margin-top:.6rem">${t("setStatus")}<select id="ns">${Object.keys(ST).filter(k=>k!=="new").map(k=>`<option value="${k}" ${k===r.status?"selected":""}>${L2(ST[k])}</option>`).join("")}</select></label>`:""}
+  <div class="err" id="re"></div><button class="pri" id="rsb" style="margin-top:.7rem">${adm?t("save"):t("send")}</button></div>`;
+}
+function newRep(){
+ return `<div class="center"><form class="form report-form" id="nf"><h1>${t("reportTitle")}</h1><p class="note">${t("reportIntro")}</p><label>${t("kind")}<span class="row">${["physical","verbal","cyber","social","other"].map(k=>`<label class="chk"><input type="checkbox" name="k" value="${k}">${t(k)}</label>`).join("")}</span></label><label>${t("recipient")}<select id="og">${ORGS.map(o=>`<option value="${o[0]}">${L2(o)}</option>`).join("")}</select></label><label>${t("reportText")}<textarea id="rt" required>${esc(S.text)}</textarea></label><label>${t("details")}<textarea id="dt"></textarea></label><label>${t("evidence")}<input id="ev" type="file" accept="image/*" multiple></label><div class="err" id="ne"></div><div class="row"><button type="button" data-p="home">${t("back")}</button><button class="pri">${t("sendRep")}</button></div></form></div>`;
+}
+function acct(){
+ const u=S.me, user=u.role==="user";
+ return `<div class="profile-wrap"><section class="page-panel"><div class="page-head profile-top"><div><h2>${t("profileTitle")}</h2><p>${t("profileDesc")}</p></div>${u.verified?`<span class="verified">✓ ${t("verified")}</span>`:""}</div><form id="ef" class="form" style="width:100%;background:transparent;border:0;padding:0"><div class="profile-fields"><label>${t("name")}<input id="nm" value="${esc(u.name)}" required></label><label>${t("email")}<input type="email" value="${esc(u.email)}" disabled></label>${user?`<label>${t("school")}<input id="school" value="${esc(u.school||"")}"></label><label>${t("grade")}<input id="grade" value="${esc(u.grade||"")}"></label><label>${t("dob")}<input id="db" type="date" value="${esc(u.dob||"")}" required></label><label>${t("gender")}<span class="radio"><label><input type="radio" name="g" value="m" ${u.gender!=="f"?"checked":""}>${t("male")}</label><label><input type="radio" name="g" value="f" ${u.gender==="f"?"checked":""}>${t("female")}</label></span></label>`:`<label>${t("org")}<input disabled value="${orgN(u.org)}"></label>`}</div><div class="err" id="ae"></div><div class="row"><button class="pri" type="submit">${t("save")}</button><button type="button" id="lo">${t("logout")}</button></div></form></section></div>`;
+}
+function view(){
+  if(!S.me)return authView();
+  if(S.page==="newrep")return nav()+newRep();
+  const p=S.page;
+  return nav()+`<main>${p==="home"?home():p==="dict"?dictPage():p==="reports"||p==="admin"?repsPage():p==="rep"&&S.rep?repDetail():acct()}</main>`;
+}
+async function go(p,id){
+  if(p!=="home"&&S.cam)stopCam();
+  S.page=p;S.err="";
+  try{
+    if(p==="reports"||p==="admin")S.reports=(await api("/reports")).reports;
+    if(p==="rep")S.rep=(await api("/reports/"+id)).report;
+    if(p==="dict"||p==="home")S.sigs=S.me.role==="org"?[]:(await api("/signs")).signs;
+  }catch(e){if(!S.me)return}
+  render();
+}
+function render(){
+  document.documentElement.lang=S.lang;document.documentElement.dir=S.lang==="ar"?"rtl":"ltr";document.documentElement.dataset.theme=S.theme;
+  $("#app").innerHTML=view();bind();
+}
+/* ============ الأحداث ============ */
+function logout(silent){if(!silent)api("/logout","POST").catch(()=>{});S.tok=null;S.me=null;localStorage.removeItem("tok");stopCam();S.page="home";S.text="";S.words=[];render()}
+function bind(){
+  const lg=$("#lg");if(lg)lg.onclick=()=>{S.lang=S.lang==="ar"?"en":"ar";localStorage.setItem("l",JSON.stringify(S.lang));render()};
+  if(!S.me)return bindAuth();
+  const th=$("#th");if(th)th.onclick=()=>{S.theme=S.theme==="dark"?"light":"dark";localStorage.setItem("t",JSON.stringify(S.theme));render()};
+  $$("[data-p]").forEach(b=>b.onclick=()=>go(b.dataset.p));
+  $$("[data-o]").forEach(b=>b.onclick=()=>go("rep",b.dataset.o));
+  const lo=$("#lo");if(lo)lo.onclick=()=>logout();
+  if(S.page==="home")bindHome();
+  if(S.page==="dict")bindDict();
+  if(S.page==="rep")bindRep();
+  if(S.page==="newrep")bindNew();
+  if(S.page==="account"){
+    const ef=$("#ef");if(ef)ef.onsubmit=async e=>{e.preventDefault();try{const b={name:$("#nm").value,lang:S.lang};if(S.me.role==="user")Object.assign(b,{dob:$("#db").value,gender:document.querySelector("[name=g]:checked").value,school:$("#school").value,grade:$("#grade").value});S.me=(await api("/me","PUT",b)).user;render()}catch(x){$("#ae").textContent=x.message}};
+  }
+}
+function bindAuth(){
+  const f=$("#f");if(!f)return;
+  const sw=$("#sw");if(sw)sw.onclick=()=>{S.auth=S.auth==="login"?"register":"login";S.err="";render()};
+  const rs=$("#rs");if(rs)rs.onclick=async()=>{const r=await api("/resend","POST",{email:S.pend}).catch(()=>({}));S.devCode=r.devCode||"";render()};
+  f.onsubmit=async e=>{e.preventDefault();S.err="";
+    try{
+      if(S.auth==="verify"){const r=await api("/verify","POST",{email:S.pend,code:$("#cd").value});return enter(r)}
+      const em=$("#em").value.trim().toLowerCase(),pw=$("#pw").value;
+      if(S.auth==="register"){const r=await api("/register","POST",{name:$("#nm").value,email:em,password:pw,dob:$("#db").value,gender:document.querySelector("[name=g]:checked").value,lang:S.lang});S.pend=em;S.devCode=r.devCode||"";S.auth="verify";return render()}
+      const r=await api("/login","POST",{email:em,password:pw});
+      if(r.needVerify){S.pend=em;S.devCode=r.devCode||"";S.auth="verify";return render()}
+      enter(r);
+    }catch(x){S.err=x.message;render()}
+  };
+}
+async function enter(r){S.tok=r.token;localStorage.setItem("tok",JSON.stringify(r.token));S.me=r.user;S.auth="login";await boot(true)}
+function bindHome(){
+  const o=$("#open");if(o)o.onclick=openCam;
+  if(S.cam){bindCam();const v=$("#v");if(v&&stream){v.srcObject=stream;v.play().catch(()=>{})}}
+  const out=$("#out");out.oninput=()=>{S.text=out.textContent;S.words=S.text.replace(/[.،؟]/g," $& ").split(/\s+/).filter(Boolean).filter(w=>w!==".")};
+  $("#cl").onclick=()=>{S.text="";S.words=[];spell=[];out.textContent=""};
+  $("#cp").onclick=()=>navigator.clipboard?.writeText(out.textContent);
+  $("#sp").onclick=()=>{const u=new SpeechSynthesisUtterance(out.textContent);u.lang=S.lang==="ar"?"ar-SA":"en-US";speechSynthesis.speak(u)};
+  $("#cm").onclick=()=>{S.words.push("،");syncText()};$("#pd").onclick=()=>{S.words.push(".");syncText()};
+  $("#sr").onclick=()=>{S.text=out.textContent.trim();if(S.text){if(S.cam)stopCam();S.page="newrep";render()}};
+  const rg=$("#rg");if(rg){rg.onclick=startRec;$("#rd").onclick=()=>{S.rec=null;render();if(stream)openCam()}}
+  showCand();showMsg();
+}
+function bindDict(){
+  const rerender=()=>{const q=$("#q"),v=q.value;$("main").innerHTML=dictPage(v);bindDict();const n=$("#q");n.focus();n.setSelectionRange(v.length,v.length)};
+  $("#q").oninput=rerender;
+  $$("[data-r]").forEach(b=>b.onclick=()=>{S.rec={word:b.dataset.r,type:b.dataset.ty,n:0,f:[],on:false};S.page="home";render();openCam()});
+  $$("[data-x]").forEach(b=>b.onclick=async()=>{await api("/signs/delete","POST",{word:b.dataset.x});S.sigs=S.sigs.filter(s=>s.word!==b.dataset.x);rerender()});
+  $("#na").onclick=()=>{const w=$("#nw").value.trim();if(!w)return;S.rec={word:w,type:$("#nt").value,n:0,f:[],on:false};S.page="home";render();openCam()};
+}
+function bindRep(){
+  $("#rsb").onclick=async()=>{
+    const adm=S.me.role==="org",rep=$("#rp").value.trim();
+    try{
+      if(adm)await api(`/reports/${S.rep.id}/update`,"POST",{reply:rep,note:$("#nt2").value,status:$("#ns").value});
+      else{if(!rep)return;await api(`/reports/${S.rep.id}/reply`,"POST",{text:rep})}
+      go("rep",S.rep.id);
+    }catch(e){$("#re").textContent=e.message}
+  };
+}
+function bindNew(){
+  $("#nf").onsubmit=async e=>{
+    e.preventDefault();const files=[...$("#ev").files].slice(0,3),at=[];
+    for(const f of files){if(f.size>1.4e6){$("#ne").textContent="الصورة أكبر من 1.4MB";return}at.push(await new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.readAsDataURL(f)}))}
+    try{
+      const r=await api("/reports","POST",{text:$("#rt").value,org:$("#og").value,kind:$$("[name=k]:checked").map(x=>x.value),details:$("#dt").value,attach:at});
+      S.text="";S.words=[];alert(t("sent")+" #"+r.id);go("rep",r.id);
+    }catch(x){$("#ne").textContent=x.message}
+  };
+}
+/* ============ الإقلاع ============ */
+async function boot(keep){
+  try{S.mailOk=(await api("/health")).emailConfigured}catch{}
+  if(S.tok&&!S.me){try{S.me=(await api("/me")).user}catch{}}
+  if(S.me){
+    const m=location.hash.match(/^#\/report\/(\d+)/);
+    return m?go("rep",m[1]):go(S.me.role==="org"?"admin":"home");
+  }
+  render();
+}
+boot();
+</script>
+</body>
+</html>
